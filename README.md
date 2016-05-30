@@ -4,4 +4,4 @@ Wubi Query
 ![](https://67.media.tumblr.com/90a778d34cb8b6503489dc1a31265801/tumblr_o7z9mmn9Y51r68ev5o1_540.png)
 
 ## gen APK file
-python-for-android apk --private . --package=goo6le.com.wubiquery --name=WubiQuery --version=0.2
+python-for-android apk --private . --package=org.test.wubiquery --name=WubiQuery --version=0.2
