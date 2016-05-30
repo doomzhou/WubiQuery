@@ -1,3 +1,5 @@
 .buildozer
 bin
 buildozer.spec
+*.pyo
+*.apk
