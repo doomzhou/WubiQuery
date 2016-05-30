@@ -1,2 +1,3 @@
-.buildozer/
-bin/
+.buildozer
+bin
+buildozer.spec
