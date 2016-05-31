@@ -21,8 +21,8 @@ import os
 class wubi(BoxLayout):
 
     def font_name(self, *args):
-        if os.path.exists('/system/fonts/NotoSansCJK-Regular.ttc'):
-            return '/system/fonts/NotoSansCJK-Regular.ttc'
+        if os.path.exists('wqy-microhei.ttc'):
+            return 'wqy-microhei.ttc'
         else:
             return '/usr/share/fonts/wenquanyi/wqy-microhei/wqy-microhei.ttc'
 
