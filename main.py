@@ -33,18 +33,34 @@ class wubi(BoxLayout):
         return a
 
     def query(self, *args):
-        Logger.info('info: %s' % os.getcwd())
         MyTextInput = self.ids['MyTextInput'] 
         ResultDisplayLabel = self.ids['ResultDisplayLabel']
         Mbdict = self.gen_dict()
         result = StringProperty()
-        try:
-            key = args[0][:1].encode('utf-8')
-            result = Mbdict[key]
-        except: # 2/3 compatible code
-            key = args[0][:1]
-            result = Mbdict[key]
-            Logger.info(result)
+        if len(args[0]) > 2:
+            Logger.info('info: less than three word')
+            MyTextInput.text = args[0][:2]
+            result = '支持少于3个字'
+        elif len(args[0]) == 0:
+            result = 'Unknown'
+        elif len(args[0]) == 1:
+            try:
+                key = args[0][:1].encode('utf-8')
+                result = Mbdict[key]
+            except: # 2/3 compatible code
+                key = args[0][:1]
+                result = Mbdict[key]
+                Logger.info(result)
+        else:
+            try:
+                key1 = args[0][:1].encode('utf-8')
+                key2 = args[0][1:2].encode('utf-8')
+                result = Mbdict[key]
+            except: # 2/3 compatible code
+                key1 = args[0][:1]
+                key2 = args[0][1:2]
+                result = Mbdict[key1][:2] + Mbdict[key2][:2]
+                Logger.info(result)
         ResultDisplayLabel.text = result
 
 

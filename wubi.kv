@@ -16,8 +16,9 @@
             size: MyBox.width, 200
             size_hint: None, None
             pos: 100, 100
-            text: "请输入一个汉字" 
+            text: "单字或词语" 
             font_size: 100
+            on_text: root.query(MyTextInput.text.strip())
             -font_name: root.font_name()
         BoxLayout:
             padding: 10
@@ -45,11 +46,12 @@
                 valign: 'middle'
                 halign: 'center'
                 markup: True
-                on_press: root.query(MyTextInput.text)
+                on_press: root.query(MyTextInput.text.strip())
+                on_text: 
                 -font_name: root.font_name()
         BoxLayout:
             padding: 10
             spacing: 10
             size_hint: 1, None
             pos_hint: {'top': 1}
-            height: 1200
+            height: 10
