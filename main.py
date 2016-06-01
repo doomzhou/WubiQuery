@@ -55,7 +55,7 @@ class wubi(BoxLayout):
             try:
                 key1 = args[0][:1].encode('utf-8')
                 key2 = args[0][1:2].encode('utf-8')
-                result = Mbdict[key]
+                result = Mbdict[key1][:2] + Mbdict[key2][:2]
             except: # 2/3 compatible code
                 key1 = args[0][:1]
                 key2 = args[0][1:2]
